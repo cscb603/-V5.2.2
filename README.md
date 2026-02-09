@@ -1,280 +1,52 @@
-# 智能高速批量图像处理工具 v4.0
+# 🖼️ 星TAP | 智能高速缩图 V5.2 (Smart High-Speed Image Processor)
 
-## 📋 工具概述
+[![GitHub release](https://img.shields.io/github/v/release/cscb603/-V5.2.2?include_prereleases)](https://github.com/cscb603/-V5.2.2/releases)
+[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS-blue)](https://github.com/cscb603/-V5.2.2/releases)
 
-这是一个功能强大的智能图像处理工具，能够自动识别系统配置，优化处理策略，支持 JPG/PNG/HEIC 等普通图像和 CR2/NEF/ARW 等 RAW 格式文件的高速批量处理。
+**地表最强图像批处理工具！智能识别、硬件加速、极致画质。**
 
-## ✨ 核心功能
+无论是单张美化还是万张大图批量处理，星TAP 智能高速缩图工具都能以惊人的速度完成任务，同时确保画质达到专业级水准。
 
-### 1. 系统配置智能识别
+---
 
+## ✨ 核心亮点 (Core Highlights)
 
+- 🧠 **智能系统感知**：自动识别 Windows/macOS 架构，智能检测 CPU 核心数与 GPU 加速能力。
+- 🚀 **全能格式支持**：
+  - **常规格式**：JPG, PNG, HEIC, BMP, GIF, TIFF。
+  - **专业 RAW 格式**：Canon (CR2), Nikon (NEF), Sony (ARW), Fujifilm (RAF) 等。
+- ⚡ **极致加速**：支持多进程并行处理，SSD 固态硬盘专项优化，大批量任务效率提升 300% 以上。
+- 📸 **专业级画质**：内置 EXIF 信息完美保留，智能方向纠正，LANCZOS 高级采样算法。
+- 📦 **开箱即用**：提供免安装的 Win/Mac 双端成品，小白也能一键上手。
 
-* **操作系统检测**: 自动识别 Windows/macOS/Linux
+---
 
-* **硬件信息检测**: CPU 核心数、GPU 型号、内存容量
+## 🚀 快速开始 (Quick Start)
 
-* **CUDA 支持检测**: 自动检测 NVIDIA 显卡和 CUDA 支持
+1. **下载**：前往 **[Releases 页面](https://github.com/cscb603/-V5.2.2/releases)** 下载对应版本。
+2. **运行**：解压后双击运行 `智能高速缩图 V5.2`。
+3. **操作**：
+   - 选择【输入文件夹】（源图片所在位置）。
+   - 选择【输出文件夹】（处理后保存位置）。
+   - 点击【开始处理】，坐等完成！
 
-* **存储类型识别**: 区分 SSD 和 HDD，优化 I/O 操作
+---
 
-### 2. 智能加速策略
+## 🛠️ 技术特性 (Technical Features)
 
+- **动态线程管理**：根据内存剩余情况实时调整 RAW 处理参数，防止系统卡死。
+- **智能去重**：自动识别同名 JPG+RAW，优先处理高质量源文件，跳过重复任务。
+- **详细报告**：处理完成后自动生成 `processing_report.txt`，任务成功/失败一目了然。
 
+---
 
-* **动态线程调整**: 根据 CPU 核心数自动调整工作线程数
+## 🤝 联系与支持 (Contact)
 
-* **内存优化**: 根据可用内存调整 RAW 处理参数
+- **作者**：星TAP
+- **邮箱**：cscb603@qq.com
+- 如果觉得好用，请点击右上角的 **Star** ⭐！
 
-* **存储优化**: SSD 启用高速模式，HDD 启用稳定模式
+---
 
-* **算法优化**: 根据图像大小选择最优缩放算法
-
-### 3. RAW 文件高速处理
-
-
-
-* **多进程处理**: RAW 文件现在支持多进程并行处理
-
-* **智能参数**: 根据系统配置自动调整 RAW 处理质量
-
-* **格式支持**: CR2、NEF、ARW、DNG、RAW、RAF、RW2、SRW 等
-
-### 4. 同名文件智能处理
-
-
-
-* **自动去重**: 当存在同名 JPG+RAW 文件时，自动选择处理 JPG
-
-* **质量优先**: 选择同组中文件最大的进行处理
-
-* **跳过机制**: 智能跳过重复文件，避免冗余处理
-
-### 5. 方向识别优化
-
-
-
-* **EXIF 解析**: 准确读取 EXIF 方向信息
-
-* **智能检测**: 备用的智能方向检测算法
-
-* **双重保障**: 提高方向识别的准确性和可靠性
-
-## 🚀 使用方法
-
-### 图形界面模式（推荐）
-
-
-
-1. 运行程序: `python 智能高速图像处理工具``v4.py`
-
-2. 选择输入文件夹（包含要处理的图像）
-
-3. 选择输出文件夹（处理后的图像保存位置）
-
-4. 设置处理参数（可选）
-
-5. 点击 "开始处理" 按钮
-
-### 命令行模式
-
-
-
-```
-python 智能高速图像处理工具v4.py <输入目录> <输出目录> \[--max-side <像素>] \[--quality <1-100>]
-```
-
-## ⚙️ 处理参数
-
-
-
-| 参数      | 说明              | 默认值  | 范围      |
-| ------- | --------------- | ---- | ------- |
-| 最大边长    | 处理后图像的最大边长（像素）  | 2000 | 1-10000 |
-| JPG 画质  | 输出 JPG 文件的质量    | 90   | 1-100   |
-| 图像线程数   | 处理普通图像的并行线程数    | 自动   | 1-16    |
-| RAW 线程数 | 处理 RAW 文件的并行线程数 | 自动   | 1-8     |
-
-## 📊 支持的文件格式
-
-### 普通图像格式
-
-
-
-* JPG/JPEG
-
-* PNG
-
-* HEIC/HEIF
-
-* BMP
-
-* GIF
-
-* TIFF
-
-### RAW 格式
-
-
-
-* Canon: CR2
-
-* Nikon: NEF
-
-* Sony: ARW
-
-* Adobe: DNG
-
-* Panasonic: RAW
-
-* Fujifilm: RAF
-
-* Panasonic: RW2
-
-* Samsung: SRW
-
-## 🛠️ 安装说明
-
-### 自动安装（推荐）
-
-
-
-```
-python install\_dependencies.py
-```
-
-### 手动安装
-
-
-
-```
-pip install Pillow>=10.0.0 rawpy>=0.19.0 numpy>=1.24.0 exiftool>=0.4.0 psutil>=5.9.0
-```
-
-### Windows 额外依赖
-
-
-
-```
-pip install pywin32>=306
-```
-
-### macOS 额外依赖
-
-
-
-```
-pip install pyobjc>=9.0
-```
-
-## 🔧 系统要求
-
-### 最低配置
-
-
-
-* Python 3.8 或更高版本
-
-* 4GB 内存
-
-* 10GB 可用磁盘空间
-
-* CPU: 双核处理器
-
-### 推荐配置
-
-
-
-* Python 3.10 或更高版本
-
-* 8GB 内存或更多
-
-* SSD 存储
-
-* 四核处理器或更高
-
-## 📈 性能优化建议
-
-
-
-1. **使用 SSD 存储**: SSD 比 HDD 快 3-5 倍
-
-2. **关闭其他程序**: 释放更多内存和 CPU 资源
-
-3. **合理设置线程数**: 根据 CPU 核心数调整
-
-4. **分批处理**: 大量文件建议分批处理
-
-5. **监控温度**: 长时间处理注意 CPU 温度
-
-## 📝 处理报告
-
-处理完成后会在输出目录生成`processing_report.txt`文件，包含：
-
-
-
-* 处理时间和统计信息
-
-* 成功 / 失败 / 跳过文件列表
-
-* 详细的错误信息（如有）
-
-## ⚠️ 注意事项
-
-
-
-1. **备份重要文件**: 建议在处理前备份原始图像
-
-2. **磁盘空间**: 确保输出目录有足够的可用空间
-
-3. **RAW 处理**: RAW 文件处理需要更多内存和时间
-
-4. **网络连接**: 首次运行可能需要下载依赖包
-
-5. **权限问题**: 确保对输入输出目录有读写权限
-
-## 🔒 隐私保护
-
-本工具在本地运行，不会上传任何图像文件到互联网，确保数据安全。
-
-## 🐛 常见问题
-
-### Q: 程序启动失败怎么办？
-
-A: 检查 Python 版本和依赖包是否正确安装
-
-### Q: RAW 文件处理失败？
-
-A: 检查是否安装了 rawpy 库，确保内存充足
-
-### Q: 方向识别不准确？
-
-A: 尝试使用不同的方向检测模式，或手动调整
-
-### Q: 处理速度很慢？
-
-A: 检查是否使用 HDD，尝试减少线程数，关闭其他程序
-
-## 🤝 技术支持
-
-如遇到问题，请检查：
-
-
-
-1. 系统配置是否满足要求
-
-2. 依赖包是否正确安装
-
-3. 输入输出路径是否正确
-
-4. 图像文件是否损坏
-
-
-
-***
-
-**版本**: v4.0
-
-**更新日期**: 2025 年 11 月
-
-**作者**: 星TAP
+**English Version Summary**
+StarTap Smart High-Speed Image Processor V5.2 is a professional-grade batch image processing utility. It features intelligent hardware detection, multi-process acceleration, and extensive format support including major RAW files. Designed for both speed and quality, it offers a user-friendly interface for effortless batch resizing and optimization on Windows and macOS.
